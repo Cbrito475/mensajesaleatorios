@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Mensaje Aleatorio con Estilo</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f0f0f0;
+            min-height: 100vh; /* Para que el contenido ocupe toda la altura de la ventana */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .mensaje {
+            background-color: #fff;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        .mensaje p {
+            font-size: 2rem;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <div class="mensaje">
+        <p id="mensaje-aleatorio"></p>
+    </div>
+    <script>
+        const mensajes = [
+            "¡Hola, mundo!",
+            "Este es un mensaje aleatorio.",
+            "¡La vida es bella!",
+            "¡Sigue adelante!",
+            "¡Disfruta cada momento!"
+        ];
+
+        const mensajeAleatorio = document.getElementById('mensaje-aleatorio');
+        mensajeAleatorio.textContent = mensajes[Math.floor(Math.random() * mensajes.length)];
+    </script>
+</body>
+</html>
